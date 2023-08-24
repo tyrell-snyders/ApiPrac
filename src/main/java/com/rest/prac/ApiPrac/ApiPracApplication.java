@@ -4,11 +4,12 @@ import java.util.List;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+// import org.springframework.web.bind.annotation.GetMapping;
+// import org.springframework.web.bind.annotation.RestController;
+
+// import com.rest.prac.ApiPrac.Models.Customer;
 
 @SpringBootApplication
-@RestController //Indicates that this is a rest controller
 public class ApiPracApplication {
 
 	public static void main(String[] args) {

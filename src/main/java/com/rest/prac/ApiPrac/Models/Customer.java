@@ -52,6 +52,7 @@ public class Customer {
         this.age = age;
     }
 
+    //Equals and HashCode
     @Override
     public int hashCode() {
         return Objects.hash(id, name, email, age);
@@ -65,9 +66,6 @@ public class Customer {
         return Objects.equals(id, customer.id) && Objects.equals(name, customer.name) && 
         Objects.equals(email, customer.email) && Objects.equals(age, customer.age);
     }
-
-    //Equals and HashCode
-    
 
     
 }
