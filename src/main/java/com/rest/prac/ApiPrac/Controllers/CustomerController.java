@@ -1,6 +1,7 @@
 package com.rest.prac.ApiPrac.Controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.rest.prac.ApiPrac.Entity.Customer;
 import com.rest.prac.ApiPrac.Repositories.CustomerRepository;
@@ -22,7 +23,7 @@ public class CustomerController {
     }
 
     @GetMapping() //Uses the default endpoint: "api/v1/customers"
-    public List<Customer> getCustomer() {
+    public List<Customer> getCustomers() {
         //Read and return the customers from the DB
         return customerRepository.findAll();
     }
@@ -43,5 +44,10 @@ public class CustomerController {
     @DeleteMapping("/remove/{customerId}")
     public void deleteCustomer(@PathVariable("customerId") Integer id) { //Gets the customer's id and deletes the whole customer
         customerRepository.deleteById(id); //Delete Customer
+    }
+
+    @GetMapping("{customerId}")
+    public Optional<Customer> getCustomer(@PathVariable("customerId") Integer id) {
+        return customerRepository.findById(id);
     }
 }
