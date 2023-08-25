@@ -4,7 +4,9 @@ import java.util.List;
 
 import com.rest.prac.ApiPrac.Entity.Customer;
 import com.rest.prac.ApiPrac.Repositories.CustomerRepository;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,5 +38,10 @@ public class CustomerController {
         customer.setAge(request.age);
 
         customerRepository.save(customer); //Inserts into the customer table
+    }
+
+    @DeleteMapping("/remove/{customerId}")
+    public void deleteCustomer(@PathVariable("customerId") Integer id) { //Gets the customer's id and deletes the whole customer
+        customerRepository.deleteById(id); //Delete Customer
     }
 }
